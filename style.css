@@ -1,0 +1,146 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+:root{
+    --Pale-blue: hsl(225, 100%, 94%);
+    --Bright-blue: hsl(245, 75%, 52%);
+    --Very-pale-blue: hsl(225, 100%, 98%);
+    --Desaturated-blue: hsl(224, 23%, 55%);
+    --Dark-blue: hsl(223, 47%, 23%);
+}
+@font-face {
+    font-family: Red Hat Display;
+    src: url(https://fonts.google.com/specimen/Red+Hat+Display);
+}
+body{
+    position: relative;
+    background: var(--Pale-blue);
+}
+body::before{
+    content: "";
+    width: 100%;
+    height: 70vh;
+    background-image: url(images/pattern-background-desktop.svg);
+    position: absolute;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: -1;
+}
+.container{
+    width: 100%;
+    height: 95vh;
+    display: grid;
+    place-items: center;
+}
+.container .card{
+    max-width: 300px;
+    background-color: white;
+    border-radius: 13px;
+    box-shadow: 0px 3px 10px 0 var(--Desaturated-blue);
+}
+.container .card .card_header{
+    width: 100%;
+    height: 160px;
+    overflow: hidden;
+    border-top-left-radius: 13px;
+    border-top-right-radius: 13px;
+}
+.container .card .card_header img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    
+}
+.container .card .card_body{
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+.container .card .card_body h1{
+    color: var(--Dark-blue);
+    font-family: Red Hat Display,sans-serif;
+    font-size: 1.5rem;
+    padding: 15px 0px;
+}
+.container .card .card_body p{
+    color: var(--Desaturated-blue);
+    font-family: Red Hat Display,sans-serif;
+    font-size: 15px;
+    line-height: 22px;
+    margin-bottom: 10px;
+}
+.container .card .card_body .charges{
+    display: flex;
+    background-color: var(--Very-pale-blue);
+    padding: 8px;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+.container .card .card_body .charges img{
+    width: 40px;
+    height: 40px;
+}
+.container .card .card_body .charges .box {
+    padding: 3px 0px;
+}
+.container .card .card_body .charges .box h2{
+   font-size: 16px;
+   color: var(--Dark-blue);
+   font-family: Red Hat Display,sans-serif;
+}
+.container .card .card_body .charges .box p{
+    color: var(--Desaturated-blue);
+    font-family: Red Hot Display,sans-serif;
+    font-size: 14px;
+}
+.container .card .card_body .charges .change{
+    color: var(--Bright-blue);
+    font-family: Red Hat Display,sans-serif;
+    font-size: 15px;
+}
+.container .card .card_body .charges .change:hover{
+    text-decoration: none;
+}
+.container .card .card_body .payment-btn{
+    text-decoration: none;
+    font-family: Red Hat Display,sans-serif;
+    background-color: var(--Bright-blue);
+    text-align: center;
+    padding: 10px 0px;
+    color: white;
+    font-size: 14px;
+    border-radius: 10px;
+    font-weight: 600;
+    box-shadow: 0px 0px 5px 0px var(--Desaturated-blue);
+    margin-bottom: 15px;
+}
+.container .card .card_body .payment-btn:hover{
+    background-color: var(--Desaturated-blue);
+}
+.container .card .card_body .cancle-btn{
+    text-decoration: none;
+    color: var(--Desaturated-blue);
+    font-weight: 600;
+    font-family: Red Hat Display,sans-serif;
+   
+}
+.container .card .card_body .cancle-btn:hover{
+    color: var(--Dark-blue);
+}
+@media (max-width:400px){
+    body::before{
+        content: "";
+    width: 100%;
+    height: 70vh;
+    background-image: url(images/pattern-background-mobile.svg);
+    position: absolute;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: -1;
+    }
+}
